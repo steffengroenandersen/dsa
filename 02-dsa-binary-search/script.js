@@ -1,3 +1,6 @@
+// Exercise: Binary Search
+// https://petlatkea.notion.site/Binary-Search-0456ac56361348cf9d82e1ffac7dee43
+
 function binarySearch(value, values) {
   console.log("Starting binarySearch...");
 
