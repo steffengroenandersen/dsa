@@ -19,6 +19,8 @@ function binarySearch(targetValue, values) {
       end = middle - 1;
     }
   }
+
+  return "Not found";
 }
 
 const answer = binarySearch(targetValue, values);
