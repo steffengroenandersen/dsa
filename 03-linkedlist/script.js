@@ -5,16 +5,6 @@ window.addEventListener("load", start);
 function start() {
   console.log("STARTING PROGRAM...");
 
-  const head = {
-    next: null,
-    data: "HEAD",
-  };
-
-  const tail = {
-    prev: null,
-    data: "TAIL",
-  };
-
   const node1 = {
     prev: null,
     next: null,
@@ -33,18 +23,21 @@ function start() {
     data: "C",
   };
 
-  const newList = new LinkedList(head, tail);
+  const newList = new LinkedList();
   newList.addLast(node1);
   newList.addLast(node2);
   newList.addLast(node3);
+  newList.dumpList();
+
+  newList.removeLast();
   newList.dumpList();
 
   const node4 = {
     data: "D",
   };
   //newList.addLast(node4);
-  newList.addFirst(node4);
-  newList.dumpList();
+  //newList.addFirst(node4);
+  //newList.dumpList();
 
   //const emptyList = new LinkedList();
   //emptyList.dumpList();
@@ -90,5 +83,12 @@ class LinkedList {
     newNode.next = this.head.next;
     newNode.next.prev = newNode;
     this.head.next = newNode;
+  }
+
+  removeLast() {
+    console.log("removeLast()");
+
+    this.tail.prev = this.tail.prev.prev;
+    this.tail.prev.next = this.tail;
   }
 }
