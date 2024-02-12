@@ -29,7 +29,7 @@ function start() {
   newList.addLast(node3);
   newList.dumpList();
 
-  newList.removeFirst();
+  newList.removeNode(node3);
   newList.dumpList();
 
   const node4 = {
@@ -97,5 +97,18 @@ class LinkedList {
 
     this.head.next = this.head.next.next;
     this.head.next.prev = this.head;
+  }
+
+  removeNode(nodeToBeDeleted) {
+    console.log("removeNode()");
+
+    let aNode = this.head;
+
+    while (aNode.data != nodeToBeDeleted.data) {
+      aNode = aNode.next;
+    }
+
+    aNode.prev.next = aNode.next;
+    aNode.next.prev = aNode.prev;
   }
 }
