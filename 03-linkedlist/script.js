@@ -29,7 +29,7 @@ function start() {
   newList.addLast(node3);
   newList.dumpList();
 
-  newList.removeLast();
+  newList.removeFirst();
   newList.dumpList();
 
   const node4 = {
@@ -90,5 +90,12 @@ class LinkedList {
 
     this.tail.prev = this.tail.prev.prev;
     this.tail.prev.next = this.tail;
+  }
+
+  removeFirst() {
+    console.log("removeFirst()");
+
+    this.head.next = this.head.next.next;
+    this.head.next.prev = this.head;
   }
 }
